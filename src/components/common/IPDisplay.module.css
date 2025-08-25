@@ -1,0 +1,45 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.encrypted {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--gray-600);
+  font-style: italic;
+}
+
+.decrypted {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--gray-800);
+  font-family: monospace;
+}
+
+.loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--gray-600);
+  font-style: italic;
+}
+
+.noip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--gray-500);
+  font-style: italic;
+}
+
+.error {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--red-600);
+  font-size: 0.875rem;
+}
