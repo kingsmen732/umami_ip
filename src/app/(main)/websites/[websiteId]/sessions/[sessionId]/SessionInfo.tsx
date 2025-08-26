@@ -1,6 +1,6 @@
 import { useFormat, useLocale, useMessages, useRegionNames, useTimezone } from '@/components/hooks';
 import TypeIcon from '@/components/common/TypeIcon';
-import IPDisplay from '@/components/common/IPDisplay';
+import AutoDecryptIP from '@/components/common/AutoDecryptIP';
 import { Icon, CopyIcon } from 'react-basics';
 import Icons from '@/components/icons';
 import styles from './SessionInfo.module.css';
@@ -29,7 +29,7 @@ export default function SessionInfo({ data }) {
 
         <dt>IP Address</dt>
         <dd>
-          <IPDisplay encryptedIp={data?.encryptedIp} showDecrypt={true} />
+          <AutoDecryptIP encryptedIp={data?.encryptedIp} />
         </dd>
 
         <dt>{formatMessage(labels.country)}</dt>
