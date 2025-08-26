@@ -12,7 +12,6 @@ import { useRouter } from 'next/navigation';
 import { useApi, useMessages } from '@/components/hooks';
 import { setUser } from '@/store/app';
 import { setClientAuthToken } from '@/lib/client';
-import Logo from '@/assets/logo.svg';
 import styles from './LoginForm.module.css';
 
 export function LoginForm() {
@@ -36,10 +35,10 @@ export function LoginForm() {
 
   return (
     <div className={styles.login}>
-      <Icon className={styles.icon} size="xl">
-        <Logo />
-      </Icon>
-      <div className={styles.title}>umami</div>
+      <div className={styles.logoContainer}>
+        <img src="/images/air.jpeg" alt="AIR Centre Logo" className={styles.logo} />
+      </div>
+      <div className={styles.title}>AIR Centre</div>
       <Form className={styles.form} onSubmit={handleSubmit} error={getMessage(error)}>
         <FormRow label={formatMessage(labels.username)}>
           <FormInput

@@ -97,10 +97,17 @@ export function NavBar() {
   return (
     <div className={styles.navbar}>
       <div className={styles.logo}>
-        <Icon size="lg">
-          <Icons.Logo />
-        </Icon>
-        <Text>umami</Text>
+        <img 
+          src="/images/air.jpeg" 
+          alt="AIR Centre Logo" 
+          style={{ 
+            width: '32px', 
+            height: '32px', 
+            borderRadius: '6px', 
+            objectFit: 'cover' 
+          }} 
+        />
+        <Text>AIR Centre</Text>
       </div>
       <div className={styles.links}>
         {links.map(({ url, label }) => {

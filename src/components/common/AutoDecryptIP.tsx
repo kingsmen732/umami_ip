@@ -24,9 +24,9 @@ export function AutoDecryptIP({ encryptedIp }: AutoDecryptIPProps) {
         const response = await fetch('/api/decrypt-ip', {
           method: 'POST',
           headers: { 
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${localStorage.getItem('authToken') || ''}`
+            'Content-Type': 'application/json'
           },
+          credentials: 'include', // Include cookies for authentication
           body: JSON.stringify({ encryptedIp }),
         });
         

@@ -10,11 +10,9 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div>
-        <Link href="https://umami.is" target="_blank" className={styles.title}>
-          <Icon size="lg">
-            <Icons.Logo />
-          </Icon>
-          <Text>umami</Text>
+        <Link href="https://aircentre.com" target="_blank" className={styles.title}>
+          <img src="/images/air.jpeg" alt="AIR Centre Logo" style={{ width: '24px', height: '24px', borderRadius: '4px', objectFit: 'cover' }} />
+          <Text>AIR Centre</Text>
         </Link>
       </div>
       <div className={styles.buttons}>

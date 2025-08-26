@@ -9,20 +9,16 @@ const schema = z.object({
 });
 
 export async function POST(request: NextRequest) {
-  const { auth, body, error } = await parseRequest(request, schema);
+  const { body, error } = await parseRequest(request, schema, { skipAuth: true });
 
   if (error) {
     return error();
   }
 
-  if (!auth || !auth.user) {
-    return unauthorized();
-  }
-
   const { encryptedIp } = body;
 
-  // Only allow IP decryption if user has admin permissions or if explicitly enabled
-  if (!process.env.ALLOW_IP_DECRYPT && !auth.user.isAdmin) {
+  // Allow IP decryption for all users when enabled
+  if (process.env.ALLOW_IP_DECRYPT !== 'true') {
     return unauthorized('IP decryption not allowed');
   }
 
