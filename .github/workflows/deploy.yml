@@ -1,0 +1,36 @@
+name: Deploy Next.js App
+
+on:
+  push:
+    branches: [ "main" ]   # adjust if your branch is different
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js
+        run: npm run build
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          STORE_IP: ${{ secrets.STORE_IP }}
+          ALLOW_IP_DECRYPT: ${{ secrets.ALLOW_IP_DECRYPT }}
+
+      - name: Start Next.js (for test run)
+        run: npm run start -- -p 3000 &
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          STORE_IP: ${{ secrets.STORE_IP }}
+          ALLOW_IP_DECRYPT: ${{ secrets.ALLOW_IP_DECRYPT }}
