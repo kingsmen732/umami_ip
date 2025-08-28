@@ -40,7 +40,7 @@ export default function ({ children }) {
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | AIR Centre',
-    default: 'AIR Centre',
+    template: '%s | NetSense',
+    default: 'NetSense',
   },
 };

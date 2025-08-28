@@ -36,9 +36,11 @@ export function LoginForm() {
   return (
     <div className={styles.login}>
       <div className={styles.logoContainer}>
-        <img src="/images/air.jpeg" alt="AIR Centre Logo" className={styles.logo} />
+        <img src="/images/air.jpeg" alt="NetSense Logo" className={styles.logo} />
+        <span className={styles.logoSeparator}>×</span>
+        <img src="/images/IITM.png" alt="IITM Logo" className={styles.logo} />
       </div>
-      <div className={styles.title}>AIR Centre</div>
+      <div className={styles.title}>NetSense</div>
       <Form className={styles.form} onSubmit={handleSubmit} error={getMessage(error)}>
         <FormRow label={formatMessage(labels.username)}>
           <FormInput

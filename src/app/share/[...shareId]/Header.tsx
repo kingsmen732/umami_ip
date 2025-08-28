@@ -10,9 +10,13 @@ export function Header() {
   return (
     <header className={styles.header}>
       <div>
-        <Link href="https://aircentre.com" target="_blank" className={styles.title}>
-          <img src="/images/air.jpeg" alt="AIR Centre Logo" style={{ width: '24px', height: '24px', borderRadius: '4px', objectFit: 'cover' }} />
-          <Text>AIR Centre</Text>
+        <Link href="https://netsense.com" target="_blank" className={styles.title}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+            <img src="/images/air.jpeg" alt="NetSense Logo" style={{ width: '24px', height: '24px', borderRadius: '4px', objectFit: 'cover' }} />
+            <span style={{ fontSize: '12px', fontWeight: 'bold', color: '#666' }}>×</span>
+            <img src="/images/IITM.png" alt="IITM Logo" style={{ width: '24px', height: '24px', borderRadius: '4px', objectFit: 'cover' }} />
+          </div>
+          <Text>NetSense</Text>
         </Link>
       </div>
       <div className={styles.buttons}>
